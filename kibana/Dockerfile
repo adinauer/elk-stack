@@ -1,4 +1,4 @@
-FROM java:8-jre
+FROM buildpack-deps:sid-curl
 MAINTAINER Alexander Dinauer <alexander@dinauer.at>
 
 ENV KIBANA_VERSION 4.0.2-linux-x64
