@@ -45,7 +45,9 @@ Find the `elasticsearch` container with `docker ps`, then use the container name
 
 ### Setup indices
 
-...
+* Make sure there is some sample data in elasticsearch or you have sent at least one log entry to logstash via logstash-forwarder.
+* Settings | Indices should show up automatically
+* Check both "Index contains time-based events" and "Use event times to create index names", then select @timestamp and click [Create].
 
 
 
@@ -74,4 +76,4 @@ Find the `elasticsearch` container with `docker ps`, then use the container name
 Logstash-Forwarder
 ------------------
 
-...
+See adinauer/logstash-forwarder.
