@@ -1,15 +1,21 @@
 elasticsearch:
     build: elasticsearch/
     volumes:
-        - data:/data
+        - data:/data:rw
+        - elasticsearch/config:/opt/elasticsearch/config:ro
 logstash:
     build: logstash/
+    volumes:
+        - logstash/config/conf.d:/opt/logstash/conf.d:ro
+        - logstash/certificates:/opt/logstash/certs:ro
     ports:
         - "5000:5000"
     links:
         - elasticsearch:elasticsearch
 kibana:
     build: kibana/
+    volumes:
+        - kibana/config:/opt/kibana/config:ro
     ports:
         - "5601:5601"
     links:
